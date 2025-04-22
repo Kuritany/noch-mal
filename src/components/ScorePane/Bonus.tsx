@@ -1,5 +1,5 @@
 import { ColorMap } from "../../constants/ColorMap";
-import { BoxColors } from "../../types/types";
+import { Colors } from "../../types/types";
 
 export const Bonus = () => {
   return (
@@ -61,7 +61,7 @@ export const Bonus = () => {
           S
         </text>
         <text
-          fill={ColorMap.get(BoxColors.Green)}
+          fill={ColorMap.get(Colors.Green)}
           x="10px"
           y="50%"
           textAnchor="middle"
@@ -71,7 +71,7 @@ export const Bonus = () => {
           B
         </text>
         <text
-          fill={ColorMap.get(BoxColors.Yellow)}
+          fill={ColorMap.get(Colors.Yellow)}
           x="24px"
           y="50%"
           textAnchor="middle"
@@ -81,7 +81,7 @@ export const Bonus = () => {
           O
         </text>
         <text
-          fill={ColorMap.get(BoxColors.Blue)}
+          fill={ColorMap.get(Colors.Blue)}
           x="38px"
           y="50%"
           textAnchor="middle"
@@ -91,7 +91,7 @@ export const Bonus = () => {
           N
         </text>
         <text
-          fill={ColorMap.get(BoxColors.Red)}
+          fill={ColorMap.get(Colors.Red)}
           x="52px"
           y="50%"
           textAnchor="middle"
@@ -101,7 +101,7 @@ export const Bonus = () => {
           U
         </text>
         <text
-          fill={ColorMap.get(BoxColors.Orange)}
+          fill={ColorMap.get(Colors.Orange)}
           x="66px"
           y="50%"
           textAnchor="middle"

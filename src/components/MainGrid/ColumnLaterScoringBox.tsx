@@ -1,10 +1,9 @@
-import { useState } from "react";
-import { ColumnId, Mark } from "../types/types";
-import { Circled } from "./Symbols/Circled";
-import { Cross } from "./Symbols/Checking/Cross";
-import { useScoreContext } from "../hooks/checkboxContext";
+import { ColumnId, Mark } from "../../types/types";
+import { Circled } from "../Symbols/Circled";
+import { useScoreContext } from "../../hooks/checkboxContext";
+import { useMemo } from "react";
 
-export const ColumnScoringBox = ({
+export const ColumnLaterScoringBox = ({
   columnId,
   score,
   redText = false,
@@ -17,20 +16,19 @@ export const ColumnScoringBox = ({
   marginAdjust?: "top" | "bottom";
   index: string;
 }) => {
-  const stateArray: Mark[] = [Mark.Blank, Mark.Circled, Mark.Scratched];
   const { letterScoreingBoxesState, letterScoreingBoxesDispatch } = useScoreContext();
 
-  const getState = () => letterScoreingBoxesState.find((el) => el.index === index)!.mark;
+
+  const isCircled = useMemo(
+    () => letterScoreingBoxesState.find((el) => el.index === index)!.mark === Mark.Circled,
+    [letterScoreingBoxesState]
+  );
 
   const OnClick = () => {
-    const nextMark =
-      stateArray[
-        (getState() + 1) % 3
-      ];
     letterScoreingBoxesDispatch({
       type: "mark",
       index: index,
-      mark: nextMark,
+      mark: !isCircled ? Mark.Circled : Mark.Blank,
     });
   };
 
@@ -60,10 +58,7 @@ export const ColumnScoringBox = ({
           {score}
         </text>
       </svg>
-      {getState() === Mark.Scratched && (
-        <Cross />
-      )}
-      {getState() === Mark.Circled && (
+      {isCircled && (
         <Circled />
       )}
     </span>

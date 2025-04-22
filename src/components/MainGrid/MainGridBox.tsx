@@ -1,9 +1,9 @@
 import { useCallback, useMemo, useState } from "react";
-import { BoxData } from "../types/types";
-import { Cross } from "./Symbols/Checking/Cross";
-import { Star } from "./Symbols/Star";
-import { Circle } from "./Symbols/Circle";
-import { useScoreContext } from "../hooks/checkboxContext";
+import { BoxData } from "../../types/types";
+import { Cross } from "../Symbols/Checking/Cross";
+import { Star } from "../Symbols/Star";
+import { Circle } from "../Symbols/Circle";
+import { useScoreContext } from "../../hooks/checkboxContext";
 
 export const MainGridBox = ({
   box,

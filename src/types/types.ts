@@ -1,4 +1,4 @@
-export enum BoxColors {
+export enum Colors {
   Blue = "blue",
   Green = "green",
   Orange = "orange",
@@ -27,10 +27,10 @@ export class BoxData {
   index: string;
   column: string;
   row: number;
-  color: BoxColors;
+  color: Colors;
   stared: boolean;
 
-  constructor(column: string, row: number, color: BoxColors, stared: boolean) {
+  constructor(column: string, row: number, color: Colors, stared: boolean) {
     this.color = color;
     this.column = column;
     this.row = row;

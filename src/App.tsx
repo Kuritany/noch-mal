@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import JokerPane from "./components/JokerPane/JokerPane";
-import { MainGridColumn } from "./components/MainGridColumn";
+import { MainGridColumn } from "./components/MainGrid/MainGridColumn";
 import ScorePane from "./components/ScorePane/ScorePane";
 import {
   columnAdata,

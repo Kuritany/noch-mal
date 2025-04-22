@@ -1,7 +1,7 @@
 import { useMemo, useState } from "react";
-import { ColumnId } from "../types/types";
-import { Cross } from "./Symbols/Checking/Cross";
-import { useScoreContext } from "../hooks/checkboxContext";
+import { ColumnId } from "../../types/types";
+import { Cross } from "../Symbols/Checking/Cross";
+import { useScoreContext } from "../../hooks/checkboxContext";
 
 export const ColumnIdBox = ({
   columnId,

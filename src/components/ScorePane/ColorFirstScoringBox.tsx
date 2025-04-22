@@ -4,12 +4,10 @@ import { Cross } from "../Symbols/Checking/Cross";
 import { ColorMap } from "../../constants/ColorMap";
 import { useScoreContext } from "../../hooks/checkboxContext";
 
-export const ColorScoringBox = ({
-  score,
+export const ColorFirstScoringBox = ({
   color,
   index,
 }: {
-  score: number;
   color: Colors;
   index: string;
 }) => {
@@ -46,7 +44,7 @@ export const ColorScoringBox = ({
           textAnchor="middle"
           dominantBaseline="central"
         >
-          {score}
+          5
         </text>
       </svg>
       {getState() === Mark.Scratched && <Cross />}

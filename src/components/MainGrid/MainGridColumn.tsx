@@ -1,6 +1,7 @@
-import { ColumnData } from "../types/types";
+import { ColumnData } from "../../types/types";
+import { ColumnFirstScoringBox } from "./ColumnFirstScoringBox";
 import { ColumnIdBox } from "./ColumnIdBox";
-import { ColumnScoringBox } from "./ColumnScoringBox";
+import { ColumnLaterScoringBox } from "./ColumnLaterScoringBox";
 import { MainGridBox } from "./MainGridBox";
 
 export const MainGridColumn = ({
@@ -16,14 +17,14 @@ export const MainGridColumn = ({
       {column.boxesData.map((box) => (
         <MainGridBox key={box.index} box={box} centerLine={centerLine} />
       ))}
-      <ColumnScoringBox
+      <ColumnFirstScoringBox
         columnId={column.column}
         redText={centerLine} 
         score={column.pointsFirstBonus + column.pointsBase}
         marginAdjust="top"
         index={column.column + "1st"}
       />
-      <ColumnScoringBox
+      <ColumnLaterScoringBox
         columnId={column.column}
         redText={centerLine} 
         score={column.pointsBase}

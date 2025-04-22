@@ -1,9 +1,9 @@
-import { BoxColors } from "../types/types";
+import { Colors } from "../types/types";
 
-export const ColorMap = new Map<BoxColors, string>([
-  [BoxColors.Blue, "#6699ff"],
-  [BoxColors.Green, "#99cc33"],
-  [BoxColors.Orange, "#ff6600"],
-  [BoxColors.Red, "#cc0f4f"],
-  [BoxColors.Yellow, "#ffcc00"]
+export const ColorMap = new Map<Colors, string>([
+  [Colors.Blue, "#6699ff"],
+  [Colors.Green, "#99cc33"],
+  [Colors.Orange, "#ff6600"],
+  [Colors.Red, "#cc0f4f"],
+  [Colors.Yellow, "#ffcc00"]
 ]);

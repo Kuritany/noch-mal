@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useScoreContext } from "../../hooks/checkboxContext";
-import { BoxColors } from "../../types/types";
+import { Colors } from "../../types/types";
 import { Bonus } from "./Bonus";
 import { ColorScoringBox } from "./ColorScoringBox";
 import { ScoreJoker } from "./ScoreJoker";
@@ -8,6 +8,8 @@ import { ScoreStar } from "./ScoreStar";
 import "./scoreStyles.css";
 import { ErasureButton } from "../SidePanel/ErasureButton";
 import { ShareButton } from "../SidePanel/ShareButton";
+import { ColorFirstScoringBox } from "./ColorFirstScoringBox";
+import { ColorLaterScoringBox } from "./ColorLaterScoringBox";
 
 export default function ScorePane() {
   const {
@@ -21,24 +23,24 @@ export default function ScorePane() {
   return (
     <div className="column right">
       <div className="row right">
-        <ColorScoringBox score={5} color={BoxColors.Green} index="R1st" />
-        <ColorScoringBox score={3} color={BoxColors.Green} index="R2nd" />
+        <ColorFirstScoringBox color={Colors.Green} index="R1st" />
+        <ColorLaterScoringBox color={Colors.Green} index="R2nd" />
       </div>
       <div className="row right">
-        <ColorScoringBox score={5} color={BoxColors.Yellow} index="G1st" />
-        <ColorScoringBox score={3} color={BoxColors.Yellow} index="G2nd" />
+        <ColorFirstScoringBox color={Colors.Yellow} index="G1st" />
+        <ColorLaterScoringBox color={Colors.Yellow} index="G2nd" />
       </div>
       <div className="row right">
-        <ColorScoringBox score={5} color={BoxColors.Blue} index="B1st" />
-        <ColorScoringBox score={3} color={BoxColors.Blue} index="B2nd" />
+        <ColorFirstScoringBox color={Colors.Blue} index="B1st" />
+        <ColorLaterScoringBox color={Colors.Blue} index="B2nd" />
       </div>
       <div className="row right">
-        <ColorScoringBox score={5} color={BoxColors.Red} index="Y1st" />
-        <ColorScoringBox score={3} color={BoxColors.Red} index="Y2nd" />
+        <ColorFirstScoringBox color={Colors.Red} index="Y1st" />
+        <ColorLaterScoringBox color={Colors.Red} index="Y2nd" />
       </div>
       <div className="row right">
-        <ColorScoringBox score={5} color={BoxColors.Orange} index="O1st" />
-        <ColorScoringBox score={3} color={BoxColors.Orange} index="O2nd" />
+        <ColorFirstScoringBox color={Colors.Orange} index="O1st" />
+        <ColorLaterScoringBox color={Colors.Orange} index="O2nd" />
       </div>
       <div className="row right">
         <Bonus />

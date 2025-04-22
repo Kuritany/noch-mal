@@ -1,30 +1,29 @@
 import { Colors, Mark } from "../../types/types";
 import { Circled } from "../Symbols/Circled";
-import { Cross } from "../Symbols/Checking/Cross";
 import { ColorMap } from "../../constants/ColorMap";
 import { useScoreContext } from "../../hooks/checkboxContext";
+import { useMemo } from "react";
 
-export const ColorScoringBox = ({
-  score,
+export const ColorLaterScoringBox = ({
   color,
   index,
 }: {
-  score: number;
   color: Colors;
   index: string;
 }) => {
-  const stateArray: Mark[] = [Mark.Blank, Mark.Circled, Mark.Scratched];
   const { colorBoxesMarkedState, colorBoxesMarkedDispatch } = useScoreContext();
 
-  const getState = () =>
-    colorBoxesMarkedState.find((el) => el.index === index)!.mark;
+
+  const isCircled = useMemo(
+      () => colorBoxesMarkedState.find((el) => el.index === index)!.mark === Mark.Circled,
+      [colorBoxesMarkedState]
+    );
 
   const onClick = () => {
-    const nextMark = stateArray[(getState() + 1) % 3];
     colorBoxesMarkedDispatch({
       type: "mark",
       index: index,
-      mark: nextMark,
+      mark: !isCircled ? Mark.Circled : Mark.Blank,
     });
   };
 
@@ -46,11 +45,10 @@ export const ColorScoringBox = ({
           textAnchor="middle"
           dominantBaseline="central"
         >
-          {score}
+          3
         </text>
       </svg>
-      {getState() === Mark.Scratched && <Cross />}
-      {getState() === Mark.Circled && <Circled />}
+      {isCircled && <Circled />}
     </span>
   );
 };
